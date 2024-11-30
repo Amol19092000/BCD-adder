@@ -44,12 +44,13 @@ module tb_bcdadder;
     );
 
     initial begin
+	 $monitor("Time: %0t | a: %d | b: %d | cin: %b | sum: %d | cout: %b", $time, a, b, cin, sum, cout);
         a = 0;  b = 0;  cin = 0;   #100;
         a = 6;  b = 9;  cin = 0;   #100;
         a = 3;  b = 3;  cin = 1;   #100;
         a = 4;  b = 5;  cin = 0;   #100;
         a = 8;  b = 2;  cin = 0;   #100;
         a = 9;  b = 9;  cin = 1;   #100;
+	$finish; 
     end
-      
 endmodule
